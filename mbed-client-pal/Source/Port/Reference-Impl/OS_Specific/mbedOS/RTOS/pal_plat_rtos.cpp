@@ -24,6 +24,16 @@
 
 #define TRACE_GROUP "PAL"
 
+int mbedtls_hardware_poll( void *data, unsigned char *output, size_t len, size_t *olen ) {
+
+    for(int i = 0; i < len; i++) {
+       output[i] = rand();
+    }
+    *olen = len;
+    return 0;
+}
+
+
 /*
     mbedOS latest version RTOS support
 */
